@@ -1,1 +1,10 @@
-this is a test manifest
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-pod
+spec:
+  containers:
+    - name: app
+      image: busybox:latest
+      command: ["/bin/sh"]
+      args: ["-c", "while true; do echo $(date -u) >> out.txt; sleep 5; done"]
