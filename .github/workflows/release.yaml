@@ -31,5 +31,6 @@ jobs:
         with:
           files: |
             out/infrastructure-components.yaml
+            out/metadata.yaml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
