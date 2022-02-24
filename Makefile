@@ -213,7 +213,7 @@ release: clean-release  ## Builds and push container images using the latest git
 .PHONY: release-manifests
 release-manifests: kustomize $(RELEASE_DIR) ## Builds the manifests to publish with a release
 	cp infrastructure-components.yaml $(RELEASE_DIR)/ > $(RELEASE_DIR)/infrastructure-components.yaml
-
+	cp metadata.yaml $(RELEASE_DIR)/ > $(RELEASE_DIR)/metadata.yaml
 
 .PHONY: clean-release
 clean-release:
