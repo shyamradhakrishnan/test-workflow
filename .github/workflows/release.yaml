@@ -25,12 +25,7 @@ jobs:
       - name: Build Release Artifacts
         run: RELEASE_TAG="${{ github.ref_name }}" make release
 
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+      - uses: actions/upload-artifact@v2
         with:
-          files: |
-            out/infrastructure-components.yaml
-            out/metadata.yaml
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          name: CAPOCI Artifacts
+          path: out/
